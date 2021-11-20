@@ -1,20 +1,13 @@
-/* Archivo con el reconocedor lexico para la tarea 5 */
-/* Para correr el programa, abrir una terminal en la ubicacion del archivo y ejecutar:
-  flex Tarea5.lex
-  bison Tarea5.y -d
-  gcc lex.yy.c Tarea5.tab.c -lfl
-  Luego, teniendo los archivos de prueba en el mismo directorio, escribir en la terminal:
-  ./a.out pruebaX.txt (X es el numero de prueba)
-*/
-
+/* Archivo con el reconocedor léxico para la calculadora */
 %{
 #include<stdlib.h>
 #include<math.h>
   /* Se incluye el archivo generado por bison para tener las definiciones
      de los tokens */
-#include "Tarea5.tab.h"
+#include "tarea5.tab.h"
 float yylvalfloat;
 int linea = 1;
+
 %}
 
 LETRA [A-Za-z]
@@ -55,6 +48,5 @@ ID    [a-zA-Z][a-zA-Z0-9]*
 "print"           {return PRINT;}           /* Se encontro un "print"*/
 {ID}              {return ID;}              /* Se encontro un identificador*/
 "\n"              {linea++;}                /* Se agrega 1 al numero de linea*/
-
 
 %%

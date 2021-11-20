@@ -1,0 +1,63 @@
+program uno
+begin
+end
+
+program dos
+x : int
+begin
+   set x 3
+end
+
+program tres
+x,y,z : int
+begin
+   set x (3 + 4) * 5;
+   set y 2
+end
+
+program cuatro
+x,y:int;
+z:float
+begin
+   set x (3*8)*3;
+   if (x < 3)
+   begin
+      set y 4;
+      set x 2
+   end
+   endif
+end
+
+program siete
+x: int;
+y: int
+begin
+  do
+    begin
+      set x 3;
+      set y 4
+    end
+  while (x < 3);
+  set y 4*y
+end
+
+program diez
+a,b,c,d: int;
+x,y,z : float
+begin
+  do
+    begin
+      set x 3;
+      if (x < 2)
+      begin
+         set y 3*2;
+	 set x x*y
+      end
+      else
+         set w (x+y)*z
+      endif;
+      set z z+1
+    end
+  while (x < 3);
+  set y 4*y
+end
